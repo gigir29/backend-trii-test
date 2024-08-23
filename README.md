@@ -1,4 +1,4 @@
-# Pokémon API Filter and Download - Trii backend test👩🏼‍💻💚
+# Pokémon API Filter and Download - Trii test👩🏼‍💻💚
 Este proyecto es una aplicación web desarrollada con FastAPI que consume la API pública de Pokémon, aplica filtros y permite la descarga de los datos en formato comprimido (ZIP).
 # Requisitos
 Asegúrate de tener Python 3.8 o superior instalado. Puedes instalar las dependencias necesarias con:
