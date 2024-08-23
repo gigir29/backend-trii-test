@@ -38,7 +38,8 @@ Devuelve una lista de Pokémon que cumplen con los filtros aplicados.
 ### **Ejemplo de Solicitud:**
 
 ```
-GET /pokemon/?type_filter=grass&ability_filter=overgrow&limit=5
+GET /download-pokemon/?type_filter=grass&ability_filter=overgrow&limit=5
+
 ```
 ### **Respuesta:**
 Devuelve un archivo ZIP que contiene archivos JSON con la información de los Pokémon filtrados.
@@ -50,6 +51,7 @@ La aplicación está configurada para permitir solicitudes desde los siguientes 
 
 - http://localhost
 - http://localhost:8000
+- http://127.0.0.1:8000
 
 # Instalación
 1. Clona el repositorio
@@ -80,7 +82,7 @@ pip install -r requirements.txt
 1. Inicia la aplicación FastAPI:
 
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 Donde main es el nombre del archivo que contiene la instancia de FastAPI (app).
 
