@@ -103,9 +103,36 @@ Esto iniciará el servidor de desarrollo de FastAPI en http://127.0.0.1:8000
 
 3. Utiliza la API para aplicar filtros y descargar datos de Pokémon.
 
+# Notas Importantes
+## Descargar Pokémon Filtrados con el Endpoint /download-pokemon/
+El endpoint /download-pokemon/ devuelve un archivo ZIP que contiene los datos de los Pokémon filtrados. Debido a la naturaleza de esta respuesta, es importante tener en cuenta lo siguiente:
+
+- **Formato de Respuesta:** El endpoint devuelve un archivo ZIP. Por lo tanto, el Content-Type de la respuesta es application/zip.
+
+## Uso de Postman:
+Cuando uses Postman para probar este endpoint, asegúrate de no intentar interpretar la respuesta como JSON. Por defecto, Postman intenta mostrar la respuesta en formato JSON, lo que resultará en un error de interpretación (JSONError: Unexpected token 'P' at 1:1).
+
+## Pasos para evitar el error en Postman:
+Después de realizar la solicitud en Postman, selecciona la opción **"Save Response"** o elige **"Send and Download"**.
+Guarda el archivo ZIP en tu sistema y ábrelo con un descompresor de archivos para revisar su contenido.
+**Encabezados Importantes:**
+**Content-Type:** application/zip
+**Content-Disposition:** attachment; filename=pokemon_data.zip
+
+## Ejemplo de Solicitud en Postman:
+```
+GET http://127.0.0.1:8000/download-pokemon/?type_filter=fire&limit=10
+```
+## Cómo Verificar el Archivo Descargado:
+- Asegúrate de que Postman descargue el archivo ZIP en lugar de intentar interpretarlo como JSON.
+- Utiliza un descompresor de archivos para abrir el archivo descargado.
+Dentro del archivo ZIP, encontrarás archivos JSON correspondientes a cada Pokémon que cumplió con los filtros aplicados.
+
 ## Notas
 
 - El servicio utiliza la API pública de Pokémon para obtener los datos.
 - Asegúrate de que los filtros aplicados sean válidos según la API de Pokémon.
+- En la documentación interactiva de Swagger al usar el endpoint de descargar pokemon se puede hacer clic en "Download file" para ver el archivo json.
 
+Muchas gracias, cualquier comentario sera bienvenido a mi correo gabrielarincon229@gmail.com💚
 
