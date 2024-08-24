@@ -19,12 +19,23 @@ pip install -r requirements.txt
   
 ### **Ejemplo de Solicitud:**
 ```
-GET /pokemon/?type_filter=grass&ability_filter=overgrow&limit=5
+GET http://127.0.0.1:8000/pokemon/?type_filter=fire&limit=5
+
 ```
 ### **Respuesta:**
 Devuelve una lista de Pokémon que cumplen con los filtros aplicados.
+```
+[
+    {
+        "name": "charizard",
+        "url": "https://pokeapi.co/api/v2/pokemon/6/"
+    },
+    ...
+]
 
-## 2. Descargar Pokémon Filtrados
+```
+
+## 2. Descargar Pokémon
 **URL:** /download-pokemon/
 
 **Método:** GET
@@ -38,7 +49,7 @@ Devuelve una lista de Pokémon que cumplen con los filtros aplicados.
 ### **Ejemplo de Solicitud:**
 
 ```
-GET /download-pokemon/?type_filter=grass&ability_filter=overgrow&limit=5
+GET http://127.0.0.1:8000/download-pokemon/?type_filter=water&limit=5
 
 ```
 ### **Respuesta:**
@@ -57,12 +68,12 @@ La aplicación está configurada para permitir solicitudes desde los siguientes 
 1. Clona el repositorio
 
 ```
-git clone <URL del repositorio>
+git clone https://github.com/gigir29/backend-trii-test.git
 ```
 2. Navega al directorio del proyecto:
    
 ```
-cd <directorio del proyecto>
+cd cd backend-trii-test
 ```
 
 3. Crea y activa un entorno virtual
@@ -84,7 +95,7 @@ pip install -r requirements.txt
 ```
 uvicorn app.main:app --reload
 ```
-Donde main es el nombre del archivo que contiene la instancia de FastAPI (app).
+Esto iniciará el servidor de desarrollo de FastAPI en http://127.0.0.1:8000
 
 2. Accede a la documentación interactiva de la API en tu navegador:
 
